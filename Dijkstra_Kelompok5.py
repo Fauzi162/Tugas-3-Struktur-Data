@@ -34,3 +34,40 @@ class Peta:
         
         unvisited_cities = [*self.daftarKota.keys()]
         distances = {}
+
+routes = {}
+
+        for city in unvisited_cities:
+            distances[city] = float("inf")
+        distances[kota_awal] = 0
+        
+        
+        while unvisited_cities:
+            closest_city = None
+            for city in unvisited_cities:
+                if closest_city == None:
+                    closest_city = city
+                elif distances[city] < distances[closest_city]:
+                    closest_city = city
+                    
+            for neighbour, distance in self.daftarKota[closest_city].items():
+                total_distance = round(distances[closest_city] + distance, 1)
+                if total_distance < distances[neighbour]:
+                    distances[neighbour] = total_distance
+                    routes[neighbour] = closest_city
+
+            unvisited_cities.remove(closest_city)
+
+        del distances[kota_awal]
+        return distances, routes 
+
+
+petaJepang = Peta()
+petaJepang.tambahKota("Mori")
+petaJepang.tambahKota("Iwata")
+petaJepang.tambahKota("Fukuroi")
+petaJepang.tambahKota("Kakegawa")
+petaJepang.tambahKota("Kikugawa")
+petaJepang.tambahKota("Shimada")
+petaJepang.tambahKota("Fujieda")
+petaJepang.tambahKota("Yaizu")
