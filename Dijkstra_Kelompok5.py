@@ -1,5 +1,5 @@
 class Peta:
-    def _init_(self):
+    def __init__(self):
         self.daftarKota = {}
     
     def tambahKota(self, kota):
@@ -71,3 +71,39 @@ petaJepang.tambahKota("Kikugawa")
 petaJepang.tambahKota("Shimada")
 petaJepang.tambahKota("Fujieda")
 petaJepang.tambahKota("Yaizu")
+petaJepang.tambahKota("Yoshida")
+petaJepang.tambahKota("Makinohara")
+petaJepang.tambahKota("Omaezaki")
+
+petaJepang.tambahJarak("Mori", "Iwata", 19)
+petaJepang.tambahJarak("Mori", "Fukuroi", 12)
+petaJepang.tambahJarak("Mori", "Kakegawa", 14)
+petaJepang.tambahJarak("Mori", "Kikugawa", 23)
+petaJepang.tambahJarak("Mori", "Shimada", 30)
+petaJepang.tambahJarak("Mori", "Fujieda", 40)
+petaJepang.tambahJarak("Iwata", "Fukuroi", 9)
+petaJepang.tambahJarak("Iwata", "Omaezaki", 30)
+petaJepang.tambahJarak("Fukuroi", "Kakegawa", 8)
+petaJepang.tambahJarak("Fukuroi", "Omaezaki", 27)
+petaJepang.tambahJarak("Kakegawa", "Kikugawa", 10)
+petaJepang.tambahJarak("Kakegawa", "Omaezaki", 23)
+petaJepang.tambahJarak("Kikugawa", "Shimada", 19)
+petaJepang.tambahJarak("Kikugawa", "Makinohara",15)
+petaJepang.tambahJarak("Kikugawa", "Yoshida", 21)
+petaJepang.tambahJarak("Kikugawa", "Omaezaki", 17)
+petaJepang.tambahJarak("Shimada", "Fujieda", 9)
+petaJepang.tambahJarak("Shimada", "Yoshida", 11)
+petaJepang.tambahJarak("Fujieda", "Yoshida", 13)
+petaJepang.tambahJarak("Yaizu", "Fujieda", 7)
+petaJepang.tambahJarak("Yaizu", "Yoshida", 15)
+petaJepang.tambahJarak("Yoshida", "Makinohara", 5)
+petaJepang.tambahJarak("Makinohara", "Omaezaki", 17)
+petaJepang.tambahJarak("Shimada", "Omaezaki",16)
+petaJepang.tambahJarak("Kikugawa", "Shimada", 19)
+petaJepang.tambahJarak("Makinohara", "Shimada", 17)
+
+
+petaJepang.printKota()
+[distances, routes] = petaJepang.dijkstra("Mori")
+print(distances)
+print(routes)
